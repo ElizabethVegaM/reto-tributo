@@ -23,15 +23,14 @@ function App() {
         </figure>
         <section id="timeline-section">
           <h3 id="timeline-title">This is a timeline of <span>Marie Curie's</span> life:</h3>
-          <ul id="timeline-list">
-          {timeline.map((el) => <ListItem date={el.date} text={el.text} />)}
+          <ul>
+            {timeline.map((el) => <ListItem date={el.date} text={el.text} />)}
           </ul>
           <p>Joliot-Curie’s daughter became a nuclear physicist and their son a biochemist, both making significant scientific contributions. Their grandson is an astrophysicist.</p>
-          <h3>
-          If you have time, you should read more about this incredible woman on her 
-          <a href="https://en.wikipedia.org/wiki/Marie_Curie" target="_blank">Wikipedia entry</a>.
-        </h3>
         </section>
+        <h3>
+          If you have time, you should read more about this incredible woman on her <span><a href="https://en.wikipedia.org/wiki/Marie_Curie" target="_blank">Wikipedia entry</a></span>.
+        </h3>
       </main>
     </div>
   );

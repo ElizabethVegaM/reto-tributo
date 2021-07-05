@@ -32,7 +32,7 @@
 }
 
 #main-section {
-
+  padding-bottom: 40px;
 }
 
 #img-container {
@@ -45,6 +45,7 @@
 
 #img-container figcaption {
   margin: 10px;
+  color: #000;
 }
 
 #timeline-section {
@@ -56,3 +57,21 @@
 #timeline-title {
   margin-bottom: 50px;
 }
+
+span {
+  background-color: #ff009e;
+  padding: 5px 8px;
+}
+
+strong {
+  background-color: #56f89a;
+  padding: 5px 8px;
+  color: #000;
+}
+
+ul {
+  text-align: left;
+  line-height: 2;
+}
+
+
