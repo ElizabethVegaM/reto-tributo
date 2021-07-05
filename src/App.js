@@ -1,18 +1,33 @@
+import { useState } from 'react';
 import './App.css';
 import { timeline } from './timeline';
 import ListItem from './ListItem';
 
-function App() {
-  const switchButton = {
-    
+const lightTheme = {
+  backgroundColor: '#fff',
+  color: '#000',
+}
 
-  }
+const darkTheme = {
+  backgroundColor: '#000',
+  color: '#fff',
+}
+
+function App() {
+  const [theme, setTheme] = useState(lightTheme);
+  const [btnTheme, setBtnTheme] = useState(darkTheme);
+
+  const switchTheme = () => {
+    theme === lightTheme ? setTheme(darkTheme): setTheme(lightTheme);
+    btnTheme === darkTheme ? setBtnTheme(lightTheme): setBtnTheme(darkTheme);
+  };
+
   return (
-    <div id="container" className="light-theme">
+    <div id="container" style={theme}>
       <header id="header-container">
         <h1>Marie Curie Tribute Page</h1>
         <p>The first woman to win a Nobel Prize. She made many discoveries that led to what we call modern medicine.</p>
-        <button id="theme-button" className="dark-theme">Dark</button>
+        <button id="theme-button" style={btnTheme} onClick={switchTheme}>Dark</button>
       </header>
       <main id="main-section">
         <figure id="img-container">
