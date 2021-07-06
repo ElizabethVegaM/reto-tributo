@@ -2,11 +2,11 @@
 /* pink #ff009e */
 /* mint #56f89a */
 
-#container {
+#main {
   border: 30px solid #ffe521ff;
 }
 
-#theme-button {
+#theme-switcher {
   border: none;
   position: fixed;
   top: 40px;
@@ -26,7 +26,7 @@
   padding-bottom: 40px;
 }
 
-#img-container {
+#img-div {
   background: #56f89a;
   padding: 20px;
   padding-bottom: 10px;
@@ -34,12 +34,18 @@
   width: fit-content;
 }
 
-#img-container figcaption {
+#image {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+#img-caption {
   margin: 10px;
   color: #000;
 }
 
-#timeline-section {
+#tribute-info {
   margin: auto;
   width: 60%;
   padding: 40px 0;
