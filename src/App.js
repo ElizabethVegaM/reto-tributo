@@ -3,29 +3,16 @@ import './App.css';
 import { timeline } from './timeline';
 import ListItem from './ListItem';
 
-const lightTheme = {
-  backgroundColor: '#fff',
-  color: '#000',
-}
-
-const darkTheme = {
-  backgroundColor: '#000',
-  color: '#fff',
-}
-
 function App() {
-  const [theme, setTheme] = useState(lightTheme);
-  const [btnTheme, setBtnTheme] = useState(darkTheme);
-  const body = document.body;
-
-  useEffect(() => {
-    body.style.background = theme.backgroundColor;
-    body.style.color = theme.color;
-  }, [theme])
+  const [theme, setTheme] = useState('light-theme');
+  const [btnTheme, setBtnTheme] = useState('dark-theme');
+  const bodyClass = document.body;
 
   const switchTheme = () => {
-    theme === lightTheme ? setTheme(darkTheme): setTheme(lightTheme);
-    btnTheme === darkTheme ? setBtnTheme(lightTheme): setBtnTheme(darkTheme);
+    theme === 'light-theme' ? setTheme('dark-theme'): setTheme('light-theme');
+    btnTheme === 'dark-theme' ? setBtnTheme('light-theme'): setBtnTheme('dark-theme');
+    bodyClass.classList.toggle(theme);
+    bodyClass.classList.toggle(btnTheme);
   };
 
   return (
@@ -33,7 +20,7 @@ function App() {
       <header id="header-container">
         <h1 id="title">Marie Curie Tribute Page</h1>
         <p>The first woman to win a Nobel Prize. She made many discoveries that led to what we call modern medicine.</p>
-        <button id="theme-switcher" style={btnTheme} onClick={switchTheme}>Dark</button>
+        <button id="theme-switcher" className={btnTheme} onClick={switchTheme}>Dark</button>
       </header>
       <main id="main-section">
         <figure id="img-div">
